@@ -27,10 +27,17 @@
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
+import Vue from 'vue'
 
 export default {
   components: {
     AppLogo
+  },
+  fetch() {
+    console.log('Global components in pages/index.vue:fetch():', Object.keys(Vue.options.components))
+  },
+  created() {
+    console.log('Global components in pages/index.vue:created():', Object.keys(Vue.options.components))
   }
 }
 </script>
